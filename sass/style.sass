@@ -1,43 +1,35 @@
-$var1: #ffffff
-$var2: #ffffff
-$var3: #f9fafc
-$var4: #4f4f6f
-$var5: #e8ebf1
-$var6: #9fa4af
-$var7: #6e45e2
+@import './variables/index'
 
-* 
+*
 	box-sizing: border-box
 
-body 
+body
 	font-family: 'Maven Pro'
 
-.container 
+.container
 	display: flex
 	flex-direction: column
 	align-items: center
-	width: 90%
+	width: 1420px
 	margin-left: auto
 	margin-right: auto
 	position: relative
 	z-index: 1
+	&_full
+		width: 100%
+		padding: 0 50px
 
-.header 
+.header
 	width: 100%
 	height: 770px
-	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: space-between
 	z-index: 2
-	&-background 
-		position: absolute
-		left: 0
-		top: 0
-		background: url('../img/Header_Background.png') no-repeat center
-		background-size: cover
-		height: 100%
-		width: 100%
-		z-index: 0
-	
-	&-content 
+	background: url('../img/Header_Background.png') no-repeat center
+	background-size: cover
+
+	&-content
 		display: flex
 		flex-direction: column
 		align-items: center
@@ -46,9 +38,9 @@ body
 		z-index: 2
 		color: $var1
 		margin-bottom: 181px
-		span 
+		span
 			display: inline-block
-			&::before 
+			&::before
 				content: ''
 				display: inline-block
 				width: 20px
@@ -56,8 +48,8 @@ body
 				background-color: $var2
 				vertical-align: middle
 				margin-right: 10px
-			
-			&::after 
+
+			&::after
 				content: ''
 				display: inline-block
 				width: 20px
@@ -65,45 +57,65 @@ body
 				background-color: $var2
 				vertical-align: middle
 				margin-left: 10px
-			
-	&-button 
+
+	&-button
 		z-index: 3
 		cursor: pointer
 		margin-bottom: 50px
-	
 
-.nav 
+.nav
+	position: relative
 	padding: 50px
-	display: flex
-	align-items: center
 	width: 100%
-	height: 50px
-	flex-direction: row
-	justify-content: space-between
-	margin-bottom: 132px
-	z-index: 2
+	&-content
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&-border
+		background-color: $var6
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		width: calc(100% - 100px)
+		height: 1px
+		border: none
 
-.logo 
+.logo
 	cursor: pointer
-
-.menu-list 
 	display: flex
 	align-items: center
-	justify-content: space-between
-	width: 770px
-	height: 50px
+	& span
+		text-transform: uppercase
+		margin-left: 17px
+		font-size: 30px
+		color: white
+		line-height: 29px
+		font-weight: 700
+		letter-spacing: 6px
+	&_black
+		& span
+			color: #37374a
+
+.menu-list
+	display: grid
+	grid-gap: 60px
+	grid-auto-flow: column
+	align-items: center
 	list-style: none
 	font-size: 16px
 	font-weight: 500
+	margin: 0
+	padding: 0
 
-.menu-link 
+.menu-link
 	color: $var1
 	text-decoration: none
-	&:hover 
+	&:hover
 		border-bottom: 2px solid
-	
 
-.button 
+.button
 	width: 150px
 	height: 50px
 	font-size: 12px
@@ -115,7 +127,7 @@ body
 	border: 1px solid $var1
 	cursor: pointer
 
-.subtitle 
+.subtitle
 	margin-bottom: 40px
 	font-family: 'Maven Pro'
 	font-size: 16px
@@ -123,30 +135,30 @@ body
 	line-height: 28px
 	text-align: center
 
-.title 
+.title
 	height: 79px
 	font-size: 86px
 	line-height: 72px
 	font-family: 'Maven Pro'
 	margin-bottom: 22px
 
-.text 
+.text
 	font-family: 'Maven Pro'
 	font-size: 16px
 	line-height: 28px
 	text-align: center
 
-.cards 
+.cards
 	display: flex
 	width: 100%
 	align-items: center
 	justify-content: center
 	background-color: $var3
-	.header-content 
+	.header-content
 		padding-top: 50px
 		margin: bottom 100px
 		color: $var4
-		span::before 
+		span::before
 			content: ''
 			display: inline-block
 			width: 20px
@@ -154,8 +166,8 @@ body
 			background-color: $var4
 			vertical-align: middle
 			margin-right: 10px
-		
-		span::after 
+
+		span::after
 			content: ''
 			display: inline-block
 			width: 20px
@@ -163,17 +175,15 @@ body
 			background-color: $var4
 			vertical-align: middle
 			margin-left: 10px
-		
-	
-	.title 
-		font-size: 60px
-	
 
-.card-list 
+	.title
+		font-size: 60px
+
+.card-list
 	display: flex
 	flex-direction: row
 
-.card 
+.card
 	background-color: $var2
 	border-radius: 20px
 	width: 440px
@@ -183,18 +193,18 @@ body
 	flex-direction: column
 	margin-right: 20px
 	margin-bottom: 120px
-	&:hover 
+	&:hover
 		cursor: pointer
 		box-shadow: inset 0 -1px 0 $var5, inset 0 1px 0 #e8ebf1
 		background-color: $var3
-	
-	&-img 
+
+	&-img
 		margin-top: 66px
 		margin-bottom: 60px
 		width: 120px
 		height: 114px
-	
-	&-title 
+
+	&-title
 		margin-bottom: 28px
 		color: $var6
 		font-family: 'Maven Pro'
@@ -203,8 +213,8 @@ body
 		line-height: 32px
 		text-align: left
 		text-transform: uppercase
-	
-	&-price 
+
+	&-price
 		color: $var4
 		font-family: 'Maven Pro'
 		font-size: 48px
@@ -212,74 +222,67 @@ body
 		line-height: 72px
 		text-align: center
 		margin-bottom: 48px
-	
-	&-text 
+
+	&-text
 		margin-bottom: 55px
 		text-align: center
 		color: $var6
 		font-family: 'Maven Pro'
 		font-size: 16px
 		line-height: 28px
-	
-	.button 
+
+	.button
 		color: $var6
 		border: 1px solid $var6
 
-		&:hover 
+		&:hover
 			background-color: $var7
 			color: $var2
-		
-	
 
-.footer 
+.footer
 	width: 100%
-
-	.header-background 
+	&-wrap
+		width: 100%
 		background: url('../img/card/Footer_Background.png') no-repeat center
 		background-size: cover
-		height: 522px
-	
-	.header-content 
+
+	.header-content
 		margin-bottom: 18px
 		margin-top: 178px
-	
-	.button 
+
+	.button
 		width: 190px
 		height: 50px
 		color: $var6
 		background-color: $var1
 		border: none
-		&:hover 
+		&:hover
 			background-color: $var7
 			color: $var2
-		
-	
-	.header-button 
-		margin-bottom: 136px
-	
-	.nav 
-		color: $var6
-		border-bottom: 1px solid $var6
-		margin-bottom: 65px
-	
-	.menu-link 
-		color: $var6
-		&:hover 
-			color: $var7
-		
-	
-	&-icon 
-		margin-right: 50px
-	
-	.button 
-		border: 1px solid $var6
-	
 
-.icon 
-	width: 100%
-	.menu-link 
+	.header-button
+		margin-bottom: 136px
+
+	.nav
 		color: $var6
-	
-	.menu-list 
+		&-border
+			color: $var6
+
+	.menu-link
+		color: $var6
+		&:hover
+			color: $var7
+
+	&-icon
+		margin-right: 50px
+
+	.button
+		border: 1px solid $var6
+
+.icon
+	width: 100%
+	.menu-link
+		color: $var6
+
+	.menu-list
 		justify-content: right
-	
